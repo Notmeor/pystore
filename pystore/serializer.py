@@ -27,7 +27,10 @@ class Serializer:
 
     @staticmethod
     def deserialize(b):
-        ret = decompress(b)
+        try:
+            ret = decompress(b)
+        except lz4.block.LZ4BlockError:
+            pass
         ret = pickle.loads(ret)
         return ret
 
