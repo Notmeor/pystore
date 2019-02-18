@@ -1,2 +1,2 @@
 
-from framemongo.core import SimpleFrameMongo
+from pystore.core import MongoStore
